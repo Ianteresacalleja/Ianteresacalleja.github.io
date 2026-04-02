@@ -1,3 +1,35 @@
+// Simple JavaScript lazy loader for images with class 'lazy-img'
+document.addEventListener('DOMContentLoaded', function() {
+    if ('IntersectionObserver' in window) {
+        const lazyImages = [].slice.call(document.querySelectorAll('img.lazy-img'));
+        const imageObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                    }
+                    img.classList.remove('lazy-img');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        lazyImages.forEach(function(img) {
+            imageObserver.observe(img);
+        });
+    } else {
+        // Fallback: just load all images
+        const lazyImages = document.querySelectorAll('img.lazy-img');
+        lazyImages.forEach(function(img) {
+            if (img.dataset.src) {
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+            }
+            img.classList.remove('lazy-img');
+        });
+    }
+});
 // Main JavaScript entry point
 // Add your interactive behavior here.
 
