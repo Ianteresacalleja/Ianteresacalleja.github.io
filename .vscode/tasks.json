@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Stage and commit new/modified images",
+			"type": "shell",
+			"command": "git add images/ && git commit -m \"Add/update Miami Zine Fair posters\" && git push",
+			"group": "build"
+		}
+	]
+}
