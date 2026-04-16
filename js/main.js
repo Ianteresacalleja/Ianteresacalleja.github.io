@@ -805,3 +805,129 @@ document.addEventListener('DOMContentLoaded', function() {
         setupReveal(photoGalleryGrid.querySelectorAll('.photo-item'), 12);
     }
 });
+
+// Hero fade-in animation logic
+window.addEventListener('DOMContentLoaded', function() {
+    const overlay = document.getElementById('heroFadeOverlay');
+    if (!overlay) {
+        return;
+    }
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+        overlay.classList.add('hide');
+        return;
+    }
+
+    document.body.classList.add('hero-only');
+
+    window.setTimeout(function() {
+        overlay.classList.add('hide');
+    }, 120);
+
+    window.setTimeout(function() {
+        document.body.classList.remove('hero-only');
+        document.body.classList.add('hero-navbar');
+        window.dispatchEvent(new Event('heroIntroComplete'));
+
+        window.setTimeout(function() {
+            document.body.classList.remove('hero-navbar');
+        }, 1400);
+    }, 1150);
+});
+
+// Animate dividers whenever they enter the viewport
+window.addEventListener('DOMContentLoaded', function() {
+  const dividers = Array.from(document.querySelectorAll('#projectsDivider, #aboutDivider'));
+  if (dividers.length === 0) {
+    return;
+  }
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    dividers.forEach(function(divider) {
+      divider.classList.add('projects-divider-animate');
+    });
+    return;
+  }
+
+  function replayDivider(divider) {
+    divider.classList.remove('projects-divider-animate');
+    void divider.offsetWidth;
+    divider.classList.add('projects-divider-animate');
+  }
+
+  function startDividerObserver() {
+    const dividerStates = new WeakMap();
+
+    const dividerObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        const divider = entry.target;
+        const state = dividerStates.get(divider) || { active: false };
+
+        if (entry.isIntersecting && !state.active) {
+          replayDivider(divider);
+          state.active = true;
+        } else if (!entry.isIntersecting) {
+          state.active = false;
+        }
+
+        dividerStates.set(divider, state);
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -12% 0px' });
+
+    dividers.forEach(function(divider) {
+      dividerObserver.observe(divider);
+    });
+  }
+
+  if (document.body.classList.contains('hero-only')) {
+    window.addEventListener('heroIntroComplete', startDividerObserver, { once: true });
+  } else {
+    startDividerObserver();
+  }
+});
+
+// Animate navbar on all non-home pages
+window.addEventListener('DOMContentLoaded', function() {
+  // If not on the home page, trigger nav animation
+  var isHome = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '';
+  if (!isHome) {
+    document.body.classList.add('nav-animated');
+    document.body.classList.add('not-index');
+  } else {
+    document.body.classList.add('index');
+  }
+});
+
+// Back to top button behavior
+window.addEventListener('DOMContentLoaded', function() {
+  const backToTopButton = document.getElementById('backToTopBtn');
+  const aboutSection = document.getElementById('about-section');
+  if (!backToTopButton) {
+    return;
+  }
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  backToTopButton.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: reduceMotion ? 'auto' : 'smooth'
+    });
+  });
+
+  if (!aboutSection || !('IntersectionObserver' in window)) {
+    backToTopButton.classList.toggle('is-visible', window.scrollY > 500);
+    return;
+  }
+
+  const aboutObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      const shouldShow = entry.isIntersecting || entry.boundingClientRect.top < window.innerHeight * 0.7;
+      backToTopButton.classList.toggle('is-visible', shouldShow);
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20% 0px' });
+
+  aboutObserver.observe(aboutSection);
+});
