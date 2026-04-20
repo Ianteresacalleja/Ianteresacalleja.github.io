@@ -530,6 +530,16 @@ document.addEventListener('DOMContentLoaded', function() {
             { src: 'images/Photography/B:W analog photo/photograms/img20260329_19040495.png', category: 'photograms', label: 'Photograms', medium: 'analog' },
 
             { src: 'images/Photography/digital photo/architecture - brickel/_DSF9813.jpg', category: 'architecture', label: 'Architecture', medium: 'digital' },
+            { src: 'images/Photography/digital photo/digital:bw:architecture/DSCF4888.jpg', category: 'architecture', label: 'Architecture', medium: 'digital', tone: 'bw' },
+            { src: 'images/Photography/digital photo/digital:bw:architecture/DSCF4901.jpg', category: 'architecture', label: 'Architecture', medium: 'digital', tone: 'bw' },
+            { src: 'images/Photography/digital photo/digital:bw:architecture/DSCF4906.jpg', category: 'architecture', label: 'Architecture', medium: 'digital', tone: 'bw' },
+            { src: 'images/Photography/digital photo/digital:bw:architecture/DSCF4990.jpg', category: 'architecture', label: 'Architecture', medium: 'digital', tone: 'bw' },
+            { src: 'images/Photography/digital photo/digital:bw:architecture/DSCF5037.jpg', category: 'architecture', label: 'Architecture', medium: 'digital', tone: 'bw' },
+            { src: 'images/Photography/digital photo/digital:bw:architecture/DSCF5040.jpg', category: 'architecture', label: 'Architecture', medium: 'digital', tone: 'bw' },
+            { src: 'images/Photography/digital photo/digital:bw:architecture/DSCF5047.jpg', category: 'architecture', label: 'Architecture', medium: 'digital', tone: 'bw' },
+            { src: 'images/Photography/digital photo/digital:bw:architecture/DSCF5223.jpg', category: 'architecture', label: 'Architecture', medium: 'digital', tone: 'bw' },
+            { src: 'images/Photography/digital photo/digital:bw:architecture/Asset 1.png', category: 'architecture', label: 'Architecture', medium: 'digital', tone: 'bw' },
+            { src: 'images/Photography/digital photo/digital:bw:architecture/Asset 2.png', category: 'architecture', label: 'Architecture', medium: 'digital', tone: 'bw' },
             { src: 'images/Photography/digital photo/robber baron/Ian-RobberBarron-self portrait.jpg', category: 'portrait', label: 'Portrait', medium: 'digital', tone: 'bw' },
             { src: 'images/Photography/digital photo/robber baron/DSCF5338-Enhanced-NR-Edit copy.jpg', category: 'portrait', label: 'Portrait', medium: 'digital', tone: 'bw' },
 
@@ -546,7 +556,6 @@ document.addEventListener('DOMContentLoaded', function() {
             { src: 'images/Photography/digital photo/garden photos/_DSF7005.JPG', category: 'garden', label: 'Garden', medium: 'digital', tone: 'bw' },
             { src: 'images/Photography/digital photo/garden photos/_DSF6888.JPG', category: 'garden', label: 'Garden', medium: 'digital', tone: 'bw' },
             { src: 'images/Photography/digital photo/garden photos/_DSF7015.JPG', category: 'garden', label: 'Garden', medium: 'digital', tone: 'bw' },
-            { src: 'images/Photography/digital photo/garden photos/_DSF6874.JPG', category: 'garden', label: 'Garden', medium: 'digital', tone: 'bw' },
             { src: 'images/Photography/digital photo/garden photos/_DSF6998.jpg', category: 'garden', label: 'Garden', medium: 'digital', tone: 'bw' },
             { src: 'images/Photography/digital photo/garden photos/_DSF6965.JPG', category: 'garden', label: 'Garden', medium: 'digital', tone: 'bw' },
             { src: 'images/Photography/digital photo/garden photos/_DSF6960.JPG', category: 'garden', label: 'Garden', medium: 'digital', tone: 'bw' },
@@ -557,7 +566,6 @@ document.addEventListener('DOMContentLoaded', function() {
             { src: 'images/Photography/digital photo/garden photos/_DSF6832.JPG', category: 'garden', label: 'Garden', medium: 'digital', tone: 'bw' },
             { src: 'images/Photography/digital photo/garden photos/_DSF6834.JPG', category: 'garden', label: 'Garden', medium: 'digital', tone: 'bw' },
             { src: 'images/Photography/digital photo/garden photos/_DSF6771.jpg', category: 'garden', label: 'Garden', medium: 'digital', tone: 'bw' },
-            { src: 'images/Photography/digital photo/garden photos/_DSF6764.JPG', category: 'garden', label: 'Garden', medium: 'digital', tone: 'bw' },
             { src: 'images/Photography/digital photo/garden photos/_DSF6933.JPG', category: 'garden', label: 'Garden', medium: 'digital', tone: 'bw' },
 
             { src: 'images/Photography/digital photo/park/d-walk -01.png', category: 'park', label: 'Park', medium: 'digital' },

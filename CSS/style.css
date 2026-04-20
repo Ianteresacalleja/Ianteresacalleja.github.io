@@ -266,6 +266,7 @@ img {
     display: block;
     height: 51px;
     width: auto;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
 }
 
 .nav-logo-long {
@@ -273,7 +274,12 @@ img {
     height: 51px;
     width: auto;
     margin: 0 auto;
-    display: none;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
+}
+
+.logo a:hover .nav-logo-default,
+.logo a:hover .nav-logo-long {
+    transform: scale(1.06) translateY(-1px);
 }
 
 .thinlogo-label {
@@ -367,6 +373,13 @@ img {
     aspect-ratio: 4 / 3;
     background-color: #444444;
     overflow: hidden;
+    border: 1px solid transparent;
+    transition: border-color 0.25s ease;
+}
+
+.project1img1:hover,
+.project1img1:focus-within {
+    border-color: #ecebea;
 }
 
 .project1img1 img {
@@ -377,7 +390,7 @@ img {
 }
 
 .project4-thumb-image {
-    object-position: center 55%;
+    object-position: center calc(55% + 35px);
 }
 
 .project3-thumb-image {
@@ -385,7 +398,22 @@ img {
 }
 
 .project8-thumb-image {
-    object-position: 48.125% center;
+    object-position: calc(48.125% - 3px) center;
+    filter: brightness(1.12) contrast(1.08);
+}
+
+.project8-page .project-main-image,
+.project8-page .project-thumb img {
+    filter: brightness(1.12) contrast(1.08);
+}
+
+.project9-page .project-main-image,
+.project9-page .project-thumb img {
+    filter: brightness(1.12) contrast(1.08);
+}
+
+.project9-thumb-image {
+    filter: brightness(1.12) contrast(1.08);
 }
 
 .project11-thumb-image {
@@ -398,6 +426,8 @@ img {
 
 .project6-thumb-image {
     object-position: 50.375% center;
+    transform: scale(1.002);
+    transform-origin: center;
 }
 
 .project7-thumb-image {
