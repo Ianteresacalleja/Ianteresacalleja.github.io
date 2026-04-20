@@ -338,13 +338,30 @@ document.addEventListener('DOMContentLoaded', function() {
         const lightbox = document.createElement('div');
         lightbox.className = 'project-image-lightbox';
         lightbox.setAttribute('aria-hidden', 'true');
-        lightbox.innerHTML = '<button type="button" class="project-image-lightbox-close" aria-label="Close zoomed image">&times;</button><img class="project-image-lightbox-img" alt="Zoomed project image">';
+        lightbox.innerHTML = '<button type="button" class="project-image-lightbox-close" aria-label="Close zoomed image">&times;</button><button type="button" class="project-image-lightbox-prev" aria-label="Previous image">&#8249;</button><img class="project-image-lightbox-img" alt="Zoomed project image"><button type="button" class="project-image-lightbox-next" aria-label="Next image">&#8250;</button>';
         document.body.appendChild(lightbox);
 
         const lightboxImage = lightbox.querySelector('.project-image-lightbox-img');
         const closeLightboxBtn = lightbox.querySelector('.project-image-lightbox-close');
+        const prevBtn = lightbox.querySelector('.project-image-lightbox-prev');
+        const nextBtn = lightbox.querySelector('.project-image-lightbox-next');
 
-        function openLightbox(src, alt) {
+        // Build gallery list from thumbs
+        function getGalleryImages(context) {
+            var thumbs = context.querySelectorAll('.project-thumb');
+            var images = [];
+            thumbs.forEach(function(thumb) {
+                images.push({ src: thumb.getAttribute('data-full'), alt: (thumb.querySelector('img') || {}).alt || '' });
+            });
+            return images;
+        }
+
+        var currentGallery = [];
+        var currentIndex = 0;
+
+        function openLightbox(src, alt, gallery, index) {
+            currentGallery = gallery || [];
+            currentIndex = (index !== undefined) ? index : 0;
             lightboxImage.src = src;
             lightboxImage.alt = alt || 'Zoomed project image';
             lightbox.classList.add('active');
@@ -358,32 +375,66 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = '';
         }
 
+        function showIndex(i) {
+            if (!currentGallery.length) return;
+            currentIndex = (i + currentGallery.length) % currentGallery.length;
+            var item = currentGallery[currentIndex];
+            lightboxImage.src = item.src;
+            lightboxImage.alt = item.alt;
+        }
+
         projectMainImages.forEach(function(image) {
             image.setAttribute('tabindex', '0');
+            var page = image.closest('.project-page');
 
             image.addEventListener('click', function() {
-                openLightbox(image.src, image.alt);
+                var gallery = page ? getGalleryImages(page) : [];
+                var activeThumb = page ? page.querySelector('.project-thumb.is-active') : null;
+                var index = 0;
+                if (activeThumb && gallery.length) {
+                    var activeSrc = activeThumb.getAttribute('data-full');
+                    index = gallery.findIndex(function(g) { return g.src === activeSrc; });
+                    if (index < 0) index = 0;
+                }
+                openLightbox(image.src, image.alt, gallery, index);
             });
 
             image.addEventListener('keydown', function(e) {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
-                    openLightbox(image.src, image.alt);
+                    image.click();
                 }
             });
         });
 
+        // On mobile: thumb clicks open lightbox directly
+        document.querySelectorAll('.project-page .project-thumb').forEach(function(thumb) {
+            thumb.addEventListener('click', function() {
+                if (window.innerWidth > 900) return;
+                var page = thumb.closest('.project-page');
+                var gallery = page ? getGalleryImages(page) : [];
+                var src = thumb.getAttribute('data-full');
+                var img = thumb.querySelector('img');
+                var alt = img ? img.alt : '';
+                var index = gallery.findIndex(function(g) { return g.src === src; });
+                if (index < 0) index = 0;
+                openLightbox(src, alt, gallery, index);
+            }, true);
+        });
+
+        prevBtn.addEventListener('click', function() { showIndex(currentIndex - 1); });
+        nextBtn.addEventListener('click', function() { showIndex(currentIndex + 1); });
+
         closeLightboxBtn.addEventListener('click', closeLightbox);
         lightbox.addEventListener('click', function(e) {
-            if (e.target === lightbox) {
-                closeLightbox();
-            }
+            if (e.target === lightbox) closeLightbox();
         });
 
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-                closeLightbox();
-            }
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showIndex(currentIndex - 1);
+            if (e.key === 'ArrowRight') showIndex(currentIndex + 1);
         });
     }
 
