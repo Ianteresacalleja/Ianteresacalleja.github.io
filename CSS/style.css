@@ -27,6 +27,7 @@ body{
     background: #222222;
     transition: opacity 0.32s ease;
     overflow-x: hidden;
+    padding-top: 60px;
 }
 
 body.page-ready {
@@ -66,11 +67,15 @@ img {
 }
 /*navbar*/
 .navbar{
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    z-index: 10;
-    background: #222222;
+    z-index: 1200;
+    background: rgba(34, 34, 34, 0.96);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(214, 213, 212, 0.12);
     padding: 10px 30px;
     animation: navbar-enter 0.62s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -1283,7 +1288,11 @@ body.resume-screen {
     width: auto;
     height: auto;
     object-fit: contain;
-    background: #111111;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    background: #ffffff;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
+    box-sizing: border-box;
 }
 
 .project-image-lightbox-close {
@@ -1779,8 +1788,18 @@ body.resume-screen {
     width: auto;
     height: auto;
     object-fit: contain;
-    border: 1px solid #4b4b4b;
-    background: #090909;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    background: #ffffff;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
+    box-sizing: border-box;
+}
+
+.photo-lightbox[data-medium="analog"] .photo-lightbox-img {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
 }
 
 .photo-lightbox-close,

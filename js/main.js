@@ -478,6 +478,10 @@ document.addEventListener('DOMContentLoaded', function() {
             { src: 'images/Photography/B:W analog photo/photograms/img20260329_19034283.png', category: 'photograms', label: 'Photograms', medium: 'analog' },
             { src: 'images/Photography/B:W analog photo/photograms/img20260329_19040495.png', category: 'photograms', label: 'Photograms', medium: 'analog' },
 
+            { src: 'images/Photography/digital photo/architecture - brickel/_DSF9813.jpg', category: 'architecture', label: 'Architecture', medium: 'digital' },
+            { src: 'images/Photography/digital photo/robber baron/Ian-RobberBarron-self portrait.jpg', category: 'portrait', label: 'Portrait', medium: 'digital', tone: 'bw' },
+            { src: 'images/Photography/digital photo/robber baron/DSCF5338-Enhanced-NR-Edit copy.jpg', category: 'portrait', label: 'Portrait', medium: 'digital', tone: 'bw' },
+
             { src: 'images/Photography/digital photo/car photos/DSCF8613.JPEG', category: 'car', label: 'Car', medium: 'digital' },
             { src: 'images/Photography/digital photo/car photos/DSCF8629.JPEG', category: 'car', label: 'Car', medium: 'digital' },
             { src: 'images/Photography/digital photo/car photos/DSCF8612.JPEG', category: 'car', label: 'Car', medium: 'digital' },
@@ -638,6 +642,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             currentPhotoIndex = index;
             lightbox.classList.remove('is-closing');
+            lightbox.setAttribute('data-medium', item.medium || '');
             lightboxImage.src = item.src;
             lightboxImage.alt = item.label + ' photo';
             lightbox.classList.add('active');
@@ -656,6 +661,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 lightbox.classList.remove('active');
                 lightbox.classList.remove('is-closing');
                 lightbox.setAttribute('aria-hidden', 'true');
+                lightbox.removeAttribute('data-medium');
                 document.body.style.overflow = '';
                 currentPhotoIndex = -1;
                 return;
@@ -666,6 +672,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 lightbox.classList.remove('active');
                 lightbox.classList.remove('is-closing');
                 lightbox.setAttribute('aria-hidden', 'true');
+                lightbox.removeAttribute('data-medium');
                 document.body.style.overflow = '';
                 currentPhotoIndex = -1;
             }, 260);
