@@ -27,7 +27,7 @@ body{
     background: #0f0f0f;
     transition: opacity 0.32s ease;
     overflow-x: hidden;
-    padding-top: 60px;
+    padding-top: 80px;
 }
 
 body.page-ready {
@@ -414,6 +414,11 @@ img {
 
 .project9-thumb-image {
     filter: brightness(1.12) contrast(1.08);
+}
+
+.project5-thumb-image {
+    transform: scale(1.30) translateX(2.3px) translateY(-20px);
+    transform-origin: center;
 }
 
 .project11-thumb-image {
@@ -1334,6 +1339,11 @@ body.resume-screen {
 
 .project-gallery + .project-gallery {
     margin-top: 48px;
+}
+
+.project-subsection {
+    border-top: 1px solid #3b3b3b;
+    padding-top: 48px;
 }
 
 .project-gallery-reverse {
