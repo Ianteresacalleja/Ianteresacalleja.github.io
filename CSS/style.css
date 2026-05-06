@@ -417,7 +417,7 @@ img {
 }
 
 .project5-thumb-image {
-    transform: scale(1.30) translateX(2.3px) translateY(-20px);
+    transform: scale(1.30) translateX(0.6%) translateY(-7%);
     transform-origin: center;
 }
 
