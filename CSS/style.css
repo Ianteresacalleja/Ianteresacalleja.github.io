@@ -340,9 +340,10 @@ img {
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: clamp(24px, 2.4vw, 40px);
-    margin: 0 30px 72px 40px;
-    max-width: 1800px;
+    gap: clamp(44px, 3.5vw, 60px);
+    margin: 0 auto 72px auto;
+    padding: 0 60px;
+    max-width: 1530px;
     content-visibility: auto;
     contain-intrinsic-size: 1200px;
 }
@@ -889,7 +890,8 @@ img {
 
     .project-row {
         grid-template-columns: repeat(2, 1fr);
-        margin: 0 24px 52px 24px;
+        margin: 0 auto 52px auto;
+        padding: 0 24px;
         gap: 28px;
     }
 
@@ -963,7 +965,8 @@ img {
 
     .project-row {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        margin: 0 16px 36px 16px;
+        margin: 0 auto 36px auto;
+        padding: 0 16px;
         gap: 18px;
     }
 
@@ -1467,14 +1470,44 @@ body.resume-screen {
     background: transparent;
 }
 
+/* Marks & Logos stacked layout */
+.project6-gallery {
+    flex-direction: column;
+    gap: 36px;
+    padding-right: 0;
+    max-width: 1400px;
+}
+
+.project6-viewer {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+}
+
+.project6-gallery .project-main-frame {
+    width: 580px;
+    height: 435px;
+    flex-shrink: 0;
+}
+
+.project6-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 8px;
+}
+
 .project6-thumbs {
-    grid-template-columns: repeat(6, 145px);
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 16px;
+    width: 100%;
+    margin-top: 0;
 }
 
 .project6-thumbs .project-thumb {
-    width: 145px;
-    height: 145px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
 }
 
 .project-thumb {
@@ -1551,6 +1584,17 @@ body.resume-screen {
         max-width: 100%;
         padding-right: 0;
         margin-left: 0;
+    }
+
+    .project6-viewer {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .project6-gallery .project-main-frame {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
     }
 
     .project-gallery + .project-gallery {
