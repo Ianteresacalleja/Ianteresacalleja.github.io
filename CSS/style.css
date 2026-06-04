@@ -471,9 +471,11 @@ img {
     transition: opacity 0.25s ease;
     z-index: 2;
     background: transparent;
-    white-space: nowrap;
-    width: max-content;
-    max-width: calc(100% - 16px);
+    white-space: normal;
+    word-break: break-word;
+    text-align: center;
+    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
 }
 
 .project1img1:hover::before,
