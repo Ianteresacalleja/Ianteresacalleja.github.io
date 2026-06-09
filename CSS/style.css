@@ -367,6 +367,18 @@ img {
     transform: translateY(0);
 }
 
+.project-card-thumb-wrap {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+    transition: border-color 0.25s ease;
+}
+
+.project-card-thumb-wrap:hover,
+.project-card-thumb-wrap:focus-within {
+    border-color: #ecebea;
+}
+
 .project1img1 {
     position: relative;
     width: 100%;
@@ -374,13 +386,7 @@ img {
     aspect-ratio: 4 / 3;
     background-color: #444444;
     overflow: hidden;
-    border: 1px solid transparent;
-    transition: border-color 0.25s ease;
-}
-
-.project1img1:hover,
-.project1img1:focus-within {
-    border-color: #ecebea;
+    transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .project1img1 img {
@@ -445,53 +451,40 @@ img {
     object-position: center;
 }
 
-.project1img1::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    background: rgba(0, 0, 0, 0.28);
-    -webkit-backdrop-filter: grayscale(100%) brightness(0.75);
-    backdrop-filter: grayscale(100%) brightness(0.75);
-    transition: opacity 0.25s ease;
-    z-index: 1;
-}
-
 .project-hover-title {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: bold;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px 16px;
+    color: #ecebea;
+    font-size: 10px;
+    font-weight: 400;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    opacity: 0;
-    transition: opacity 0.25s ease;
-    z-index: 2;
-    background: transparent;
+    background: #0f0f0f;
+    transform: translateY(100%);
+    transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 3;
     white-space: normal;
     word-break: break-word;
-    text-align: center;
-    width: calc(100% - 32px);
-    max-width: calc(100% - 32px);
+    text-align: left;
+    box-sizing: border-box;
 }
 
-.project1img1:hover::before,
-.project1img1:focus-within::before {
-    opacity: 1;
+.project-card-thumb-wrap:hover .project1img1,
+.project-card-thumb-wrap:focus-within .project1img1 {
+    transform: translateY(-8px);
 }
 
-.project1img1:hover .project-hover-title,
-.project1img1:focus-within .project-hover-title {
-    opacity: 1;
+.project-card-thumb-wrap:hover .project-hover-title,
+.project-card-thumb-wrap:focus-within .project-hover-title {
+    transform: translateY(0);
 }
 
 .project-card-link {
     display: block;
     width: 100%;
-    height: 100%;
     text-decoration: none;
     color: inherit;
     background: transparent;
