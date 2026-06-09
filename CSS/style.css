@@ -1798,15 +1798,15 @@ body.resume-screen {
 
 /* Photography Page */
 .photo-page {
-    margin-top: 20px;
-    margin-bottom: 60px;
+    margin-top: 40px;
+    margin-bottom: 120px;
     margin-left: 40px;
     padding-right: 30px;
 }
 
 .photo-hero {
     position: relative;
-    padding: 18px 10px 24px 10px;
+    padding: 56px 10px 56px 10px;
     border-bottom: 1px solid #3a3a3a;
 }
 
@@ -1831,7 +1831,7 @@ body.resume-screen {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    padding: 24px 10px 20px 10px;
+    padding: 44px 10px 36px 10px;
 }
 
 .photo-filter {
@@ -1863,7 +1863,7 @@ body.resume-screen {
 .photo-gallery-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 14px;
+    gap: 22px;
 }
 
 .photo-item {
@@ -2051,6 +2051,7 @@ body.resume-screen {
 
     .photo-gallery-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
     }
 }
 
@@ -2058,16 +2059,17 @@ body.resume-screen {
     .photo-page {
         margin-left: 12px;
         padding-right: 12px;
-        margin-bottom: 40px;
+        margin-bottom: 72px;
     }
 
     .photo-hero {
-        padding-top: 10px;
+        padding-top: 36px;
+        padding-bottom: 36px;
     }
 
     .photo-gallery-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
+        gap: 14px;
     }
 
     .photo-lightbox {
