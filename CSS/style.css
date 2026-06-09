@@ -149,21 +149,42 @@ img {
 }
 
 .navbar ul li a {
+    position: relative;
     padding: 30px 10px;
     display: block;
     font-weight: 400;
-    transition: color 0.35s ease, transform 0.35s ease, opacity 0.35s ease;
+    transition: color 0.18s ease, opacity 0.18s ease;
 }
 
-.navbar ul li a:hover {
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 24px;
+    left: 10px;
+    right: 10px;
+    height: 1px;
+    background: #ecebea;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.navbar ul li a:hover,
+.navbar ul li a:hover::after {
     color: #ffffff;
-    border-radius: 5px;
-    transform: translateY(-1px);
+}
+
+.navbar ul li a:hover::after {
+    transform: scaleX(1);
 }
 
 .navbar ul li a.is-current {
     color: #ffffff;
     opacity: 1;
+}
+
+.navbar ul li a.is-current::after {
+    transform: scaleX(1);
 }
 
 .logo{
