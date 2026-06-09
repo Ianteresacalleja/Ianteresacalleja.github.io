@@ -1,1 +1,5 @@
 *.psd
+.DS_Store
+**/.DS_Store
+*.pdf
+CSS/style.css.bak
