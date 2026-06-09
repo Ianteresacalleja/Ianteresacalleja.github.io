@@ -306,13 +306,13 @@ img {
     display: flex;
     flex-direction: column;
     gap: 18px;
-    margin: 100px 30px 66px 40px;
+    margin: 160px 30px 66px 40px;
     color: #ecebea;
 }
 
 .about-divider-wrap {
     margin-top: -2px;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 .projects-divider-label-wrap {
@@ -382,7 +382,7 @@ img {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: clamp(44px, 3.5vw, 60px);
-    margin: 0 auto 72px auto;
+    margin: 0 auto 120px auto;
     padding: 0 60px;
     max-width: 1530px;
     content-visibility: auto;
@@ -569,7 +569,7 @@ img {
 
 /* About section on homepage */
 .about-section {
-    margin: 62px 30px 120px 40px;
+    margin: 80px 30px 180px 40px;
     color: #ecebea;
     content-visibility: auto;
     contain-intrinsic-size: 720px;
@@ -919,13 +919,13 @@ img {
     }
 
     .projects-divider-wrap {
-        margin: 84px 24px 52px 24px;
+        margin: 120px 24px 52px 24px;
         gap: 14px;
     }
 
     .project-row {
         grid-template-columns: repeat(2, 1fr);
-        margin: 0 auto 52px auto;
+        margin: 0 auto 80px auto;
         padding: 0 24px;
         gap: 28px;
     }
@@ -943,7 +943,7 @@ img {
     }
 
     .about-section {
-        margin: 52px 20px 120px 20px;
+        margin: 72px 20px 140px 20px;
     }
 
     .about-content {
@@ -989,7 +989,7 @@ img {
     }
 
     .projects-divider-wrap {
-        margin: 56px 16px 32px 16px;
+        margin: 80px 16px 32px 16px;
         gap: 10px;
     }
 
