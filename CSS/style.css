@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "neue-haas-grotesk-display", sans-serif;
     font-weight: 700;
     text-transform: none;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.15em;
 }
 
 body{
@@ -515,7 +515,7 @@ img {
     margin: 0;
     font-size: 10px;
     font-weight: 700;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.15em;
 }
 
 .project1-info time {
@@ -581,7 +581,7 @@ img {
 .about-text h2 {
     font-size: 16px;
     font-weight: 700;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.15em;
     margin-bottom: 18px;
 }
 
@@ -1102,7 +1102,7 @@ img {
     margin: 0;
     font-size: 20px;
     font-weight: 700;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.15em;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1220,7 +1220,7 @@ body.resume-screen {
 .resume-title {
     font-size: 28px;
     font-weight: 700;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.15em;
     margin: 0 0 10px 0;
 }
 
@@ -1244,7 +1244,7 @@ body.resume-screen {
 .resume-block h2 {
     font-size: 14px;
     font-weight: 700;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.15em;
     margin-bottom: 12px;
 }
 
@@ -1314,7 +1314,7 @@ body.resume-screen {
     color: #ecebea;
     font-size: 24px;
     font-weight: 700;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.15em;
     margin: 0;
     white-space: nowrap;
 }
@@ -1544,7 +1544,7 @@ body.resume-screen {
     color: #ecebea;
     font-size: 14px;
     font-weight: 700;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.15em;
     margin-bottom: 16px;
 }
 
@@ -1790,7 +1790,7 @@ body.resume-screen {
     max-width: 760px;
     font-size: clamp(18px, 2.2vw, 30px);
     line-height: 1.25;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.15em;
     font-weight: 700;
 }
 
