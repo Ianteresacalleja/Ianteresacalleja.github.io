@@ -936,7 +936,7 @@ img {
 
     .project-hover-title {
         white-space: normal;
-        width: calc(100% - 10px);
+        width: 100%;
         text-align: center;
         word-break: break-word;
         line-height: 1.35;
@@ -1025,7 +1025,7 @@ img {
 
     .project-hover-title {
         white-space: normal;
-        width: calc(100% - 14px);
+        width: 100%;
         text-align: center;
         word-break: break-word;
         line-height: 1.35;
