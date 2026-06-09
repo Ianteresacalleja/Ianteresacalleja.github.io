@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "neue-haas-grotesk-display", sans-serif;
     font-weight: 700;
     text-transform: none;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
 }
 
 body{
@@ -513,9 +513,9 @@ img {
 .project1-info h2 {
     display: inline-block;
     margin: 0;
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 700;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
 }
 
 .project1-info time {
@@ -579,10 +579,10 @@ img {
 }
 
 .about-text h2 {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
-    letter-spacing: 0.15em;
-    margin-bottom: 18px;
+    letter-spacing: 0.1em;
+    margin-bottom: 22px;
 }
 
 .about-text p {
@@ -1100,13 +1100,13 @@ img {
 
 .contact-modal h2 {
     margin: 0;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 700;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .form-group {
@@ -1218,10 +1218,10 @@ body.resume-screen {
 }
 
 .resume-title {
-    font-size: 28px;
+    font-size: 35px;
     font-weight: 700;
-    letter-spacing: 0.15em;
-    margin: 0 0 10px 0;
+    letter-spacing: 0.1em;
+    margin: 0 0 14px 0;
 }
 
 .resume-kicker,
@@ -1242,10 +1242,10 @@ body.resume-screen {
 }
 
 .resume-block h2 {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 700;
-    letter-spacing: 0.15em;
-    margin-bottom: 12px;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
 }
 
 .resume-block p {
@@ -1312,9 +1312,9 @@ body.resume-screen {
 
 .project-page-title {
     color: #ecebea;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 700;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
     margin: 0;
     white-space: nowrap;
 }
@@ -1542,10 +1542,10 @@ body.resume-screen {
 
 .project-press h2 {
     color: #ecebea;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 700;
-    letter-spacing: 0.15em;
-    margin-bottom: 16px;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
 }
 
 .project-press-list {
@@ -1672,8 +1672,8 @@ body.resume-screen {
     }
 
     .resume-title {
-        margin-bottom: 10px;
-        font-size: 22px;
+        margin-bottom: 14px;
+        font-size: 28px;
     }
 
     .project-page {
@@ -1689,8 +1689,8 @@ body.resume-screen {
     }
 
     .project-page-title {
-        font-size: 18px;
-        letter-spacing: 1.5px;
+        font-size: 23px;
+        letter-spacing: 0.1em;
     }
 
     .project-page-description {
@@ -1788,9 +1788,9 @@ body.resume-screen {
 .photo-hero h1 {
     color: #ecebea;
     max-width: 760px;
-    font-size: clamp(18px, 2.2vw, 30px);
+    font-size: clamp(23px, 2.75vw, 38px);
     line-height: 1.25;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
     font-weight: 700;
 }
 
