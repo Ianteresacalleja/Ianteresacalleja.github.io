@@ -179,12 +179,15 @@ img {
 }
 
 .navbar ul li a.is-current {
-    color: #ffffff;
+    color: #0f0f0f;
     opacity: 1;
+    background: #ecebea;
+    border-radius: 4px;
+    padding: 6px 10px;
 }
 
 .navbar ul li a.is-current::after {
-    transform: scaleX(1);
+    display: none;
 }
 
 .logo{
