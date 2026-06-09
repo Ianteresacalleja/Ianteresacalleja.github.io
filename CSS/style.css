@@ -1806,23 +1806,22 @@ body.resume-screen {
 
 .photo-hero {
     position: relative;
-    padding: 56px 10px 56px 10px;
-    border-bottom: 1px solid #3a3a3a;
+    padding: 56px 10px 48px 10px;
 }
 
 .photo-kicker {
-    color: #9c9a98;
+    font-family: "cofo-sans-mono-variable", sans-serif;
+    color: #a8a6a4;
     text-transform: uppercase;
-    letter-spacing: 2.4px;
+    letter-spacing: 2.5px;
     font-size: 10px;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 
 .photo-hero h1 {
     color: #ecebea;
-    max-width: 760px;
-    font-size: clamp(23px, 2.75vw, 38px);
-    line-height: 1.25;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 0.9;
     letter-spacing: 0.1em;
     font-weight: 700;
 }
