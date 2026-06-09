@@ -201,6 +201,8 @@ img {
 /* sidebar */
 
 .sidebar {
+    display: none !important;
+
     position: fixed;
     top: 0;
     left: 0;
@@ -1633,12 +1635,7 @@ body.resume-screen {
     }
 }
 
-@media (max-width: 1300px) and (min-width: 901px) {
-    .project-page {
-        /* Keep project content clear of the fixed left sidebar when it is visible. */
-        margin-left: 64px;
-    }
-}
+
 
 @media (max-width: 900px) {
     body.resume-screen {
