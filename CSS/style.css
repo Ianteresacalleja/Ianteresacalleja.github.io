@@ -323,6 +323,14 @@ img {
     text-transform: lowercase;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+    .thinlogo-label {
+        opacity: 0;
+        transform: translateY(-28px);
+        will-change: opacity, transform;
+    }
+}
+
 .projects-divider-wrap {
     display: flex;
     flex-direction: column;

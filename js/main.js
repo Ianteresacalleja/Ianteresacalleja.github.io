@@ -966,6 +966,43 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+// Slide "Graphic Design" label out from SVG on scroll (index page only)
+window.addEventListener('DOMContentLoaded', function() {
+  var label = document.querySelector('.thinlogo-label');
+  if (!label) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    label.style.opacity = '1';
+    label.style.transform = 'none';
+    label.style.willChange = 'auto';
+    return;
+  }
+
+  var ticking = false;
+  var revealed = false;
+  var revealDist = window.innerHeight * 0.2;
+
+  function update() {
+    var p = Math.min(window.scrollY / revealDist, 1);
+    label.style.opacity = p;
+    label.style.transform = 'translateY(' + ((1 - p) * -28) + 'px)';
+    if (p >= 1 && !revealed) {
+      revealed = true;
+      label.style.willChange = 'auto';
+      window.removeEventListener('scroll', onScroll);
+    }
+    ticking = false;
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+});
+
 // Back to top button behavior
 window.addEventListener('DOMContentLoaded', function() {
   const backToTopButton = document.getElementById('backToTopBtn');
