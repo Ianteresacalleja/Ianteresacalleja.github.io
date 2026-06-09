@@ -900,6 +900,8 @@ img {
         opacity: 0;
         transform: translateY(8px);
         transition: opacity 0.28s ease, transform 0.28s ease;
+        display: flex;
+        justify-content: center;
     }
 
     .navbar .main-menu.is-open ul li {
@@ -918,8 +920,13 @@ img {
         padding: 10px 8px;
         font-size: 10px;
         letter-spacing: 1.6px;
-        text-align: center;
-        border: 1px solid #4a4a4a;
+        display: inline-block;
+    }
+
+    .navbar ul li a::after {
+        bottom: 4px;
+        left: 8px;
+        right: 8px;
     }
 
     .navbar .main-menu a.btn {
