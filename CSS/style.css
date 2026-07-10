@@ -485,7 +485,7 @@ img {
 }
 
 .project3-thumb-image {
-    object-position: center top;
+    object-position: center -70px;
 }
 
 .project8-thumb-image {
@@ -508,7 +508,7 @@ img {
 }
 
 .project5-thumb-image {
-    transform: scale(1.30) translateX(0.6%) translateY(-7%);
+    transform: scale(1.43) translateX(0.6%) translateY(calc(-7% + 10px));
     transform-origin: center;
 }
 
